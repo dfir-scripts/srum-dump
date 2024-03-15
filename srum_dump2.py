@@ -17,7 +17,7 @@ import itertools
 import pathlib
 import uuid
 import webbrowser
-import PySimpleGUI as sg
+# import PySimpleGUI as sg
 import tempfile
 import urllib.request
 import subprocess
@@ -543,6 +543,9 @@ ads = itertools.cycle(["Did you know SANS Automating Infosec with Python SEC573 
        "This program was written by Twitter:@markbaggett and @donaldjwilliam5 because @ovie said so.",
        "SRUM-DUMP 2.0 will attempt to dump any ESE database! If no template defines a table it will do its best to guess."
        ])
+
+if not sys.platform == 'linux':
+    import PySimpleGUI as sg
 
 if not options.SRUM_INFILE:
     srum_path = ""
